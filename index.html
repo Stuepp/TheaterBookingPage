@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./index.js"></script>
+  <title>Theater</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Movie Name</h1>
+  </div>
+  <div class="container">
+    <div class="seats" id="seats">
+      <!-- mudar de inout e label para onclick mesmo -->
+      <div class="seats-left" id="seats-left" onclick="event.stopPropagation(); zoomSeats('seats-left', '.left-seat')">
+        <img class="seat" id="seat" src="./Assets/chair.png" alt="">
+      </div>
+      <div class="seats-center" id="seats-center" onclick="zoomSeats('seats-center', '.center-seat')"></div>
+      <div class="seats-right" id="seats-right" onclick="zoomSeats('seats-right','.right-seat')"></div>
+    </div>
+    <div class="screen">
+      <p>SCREEN</p>
+    </div>
+    <div class="booking-list">
+      <div>
+        <img class="seat" style="width: 30px; height: 30px;" src="./Assets/chair.png" alt="">
+        <p>Number of seats: <span id="numOfSeats"></span></p>
+      </div>
+      <div>
+        <div class="carousel">
+          <img src="./Assets/back.png" width="30px" height="30px" alt="back arrow" id="barrow" onclick="changeItem()">
+          <img src="./Assets/popcorn.png" width="40px" height="40px" alt="pop corn" id="popcorn" onclick="popCornandDrink('NumOfpopcorn')">
+          <img src="./Assets/popcorn-drink.png" width="40px" height="40px" alt="pop corn and drink" id="popcorn-drink" onclick="popCornandDrink('NumOfpopcorn-drink')">
+          <img src="./Assets/next.png" width="30px" height="30px" alt="next arrow" id="narrow" onclick="changeItem()">
+        </div>
+        <div>
+          <p>Pop corn <span id="NumOfpopcorn"></span></p>
+          <p>Pop corn and Drink <span id="NumOfpopcorn-drink"></span></p>
+        </div>
+      </div>
+      <div class="buying">
+        <p>Price: $<span id="price">0</span></p>
+        <button id="buy">BUY</button>
+        <button id="cancel">CANCEL</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
