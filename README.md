@@ -2,9 +2,9 @@
   In this project, you will step into the shoes of a web UI designer and front-end developer for a cinemas and theaters management company, helping to enable users to book and view their seats smoothly across different devices.
 
 ## Project Objectives
-  .1  Prototype a responsive seat map visual layout maximizing cross-device usage
-  .2  Connect the visual seat map to a grid of seats (columns and rows) to be used for booking
-  .3  Change the controls dynamically, depending on screen size, to increase booking completions
+  1.  Prototype a responsive seat map visual layout maximizing cross-device usage
+  2.  Connect the visual seat map to a grid of seats (columns and rows) to be used for booking
+  3.  Change the controls dynamically, depending on screen size, to increase booking completions
 
 ## Layout Example
 
