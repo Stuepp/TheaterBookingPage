@@ -5,11 +5,13 @@ function makeSeatsGrid(){
   let seat = document.getElementById('seat');
   
   // left seats
-  for(let row = 1; row < 14; row++){
+  for(let row = 0; row < 14; row++){
     for(let col = 1; col < 2; col++){
       const cloneSeat = seat.cloneNode(true);
-      cloneSeat.setAttribute("onclick", "bookSeat()");
       cloneSeat.setAttribute("class", "seat left-seat");
+      cloneSeat.style.display = 'block'
+      cloneSeat.setAttribute("id", `L-${row}-${col}`)
+      cloneSeat.setAttribute("onclick", `bookSeat("L-${row}-${col}")`);
       cloneSeat.style.pointerEvents = 'none'
       seats_left.appendChild(cloneSeat);
     }
@@ -18,8 +20,10 @@ function makeSeatsGrid(){
     for(let row = 0; row < 8; row++){
       for(let col = 0; col < 8; col++){
         const cloneSeat = seat.cloneNode(true);
-        cloneSeat.setAttribute("onclick", "bookSeat()");
         cloneSeat.setAttribute("class", "seat center-seat");
+        cloneSeat.style.display = 'block'
+        cloneSeat.setAttribute("id", `C-${row}-${col}`)
+        cloneSeat.setAttribute("onclick", `bookSeat("C-${row}-${col}")`);
         cloneSeat.style.pointerEvents = 'none'
         seats_center.appendChild(cloneSeat);
       }
@@ -28,8 +32,10 @@ function makeSeatsGrid(){
   for(let row = 0; row < 14; row++){
     for(let col = 1; col < 2; col++){
       const cloneSeat = seat.cloneNode(true);
-      cloneSeat.setAttribute("onclick", "bookSeat()");
       cloneSeat.setAttribute("class", "seat right-seat");
+      cloneSeat.style.display = 'block'
+      cloneSeat.setAttribute("id", `R-${row}-${col}`)
+      cloneSeat.setAttribute("onclick", `bookSeat("R-${row}-${col}")`);
       cloneSeat.style.pointerEvents = 'none'
       seats_right.appendChild(cloneSeat);
     }
@@ -57,18 +63,46 @@ function zoomSeats(id, child_class){
   }
   
 }
-function bookSeat(){
+function checkSeatStatus(seat, booked_seats, price_el){
+  if(seat.style.backgroundColor != 'gray'){
+    seat.style.backgroundColor = 'gray'
+
+    if(parseInt(booked_seats.innerHTML)){
+      booked_seats.innerHTML = 1 + parseInt(booked_seats.innerHTML)
+    }else{
+      booked_seats.innerHTML = 1
+    }
+
+    if(parseInt(price_el.innerHTML)){
+      price_int = parseInt(price_el.innerHTML)
+      price_el.innerHTML = (12 * booked_seats.innerHTML)
+    }else{
+      price_el.innerHTML = (12 * booked_seats.innerHTML)
+    }
+
+  }else{
+    seat.style.backgroundColor = 'white'
+
+    if(parseInt(booked_seats.innerHTML)){
+      booked_seats.innerHTML = parseInt(booked_seats.innerHTML) - 1
+    }
+
+    if(parseInt(price_el.innerHTML)){
+      price_int = parseInt(price_el.innerHTML)
+      price_el.innerHTML = (12 * booked_seats.innerHTML)
+    }
+
+  }
+
+}
+
+function bookSeat(seatId){
   event.stopPropagation();
   let booked_seats = document.getElementById('numOfSeats')
   let price_el = document.getElementById('price')
-  booked_seats.innerHTML = 1
-  if(parseInt(price_el.innerHTML)){
-    price_int = parseInt(price_el.innerHTML)
-    price_el.innerHTML = (12 * booked_seats.innerHTML) + price_int
-  }else{
-    price_el.innerHTML = (12 * booked_seats.innerHTML)
-  }
-
+  let seat = document.getElementById(seatId)
+  
+  checkSeatStatus(seat, booked_seats, price_el)
 }
 function popCornandDrink(id){
   let choice = document.getElementById(id)
