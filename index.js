@@ -104,35 +104,28 @@ function bookSeat(seatId){
   
   checkSeatStatus(seat, booked_seats, price_el)
 }
-function popCornandDrink(id){
-  let choice = document.getElementById(id)
+function updateprice(){
   let price_el = document.getElementById('price')
-  if(id == 'NumOfpopcorn'){
-    choice.innerHTML = '✅'
-    if(parseInt(price_el.innerHTML)){
-      price_int = parseInt(price_el.innerHTML)
-      price_el.innerHTML = 7 + price_int
-    }else{
-      price_el.innerHTML = 7
-    }
-  }else{
-    choice.innerHTML = '✅'
-    if(parseInt(price_el.innerHTML)){
-      price_int = parseInt(price_el.innerHTML)
-      price_el.innerHTML = 10 + price_int
-    }else{
-      price_el.innerHTML = 10
-    }
+  let numOfpop = parseInt(document.getElementById('numOfpop').value)
+  let numOfpopDrink = parseInt(document.getElementById('numOfpopDrink').value)
+  let numOfSeats = parseInt(document.getElementById('numOfSeats').innerHTML)
+  let new_price = 0
+  alert(new_price)
+  // Verifique se numOfpop é um número válido e maior que zero
+  if (!isNaN(numOfpop) && numOfpop > 0) {
+    new_price += numOfpop * 7; // Multiplique numOfpop por 7 e adicione ao novo preço
   }
-}
-function changeItem(){
-  if(document.getElementById('popcorn').style.display == 'none'){
-    document.getElementById('popcorn').style.display = 'block'
-    document.getElementById('popcorn-drink').style.display = 'none'
-  }else{
-    document.getElementById('popcorn').style.display = 'none'
-    document.getElementById('popcorn-drink').style.display = 'block'
+  // Verifique se numOfpopDrink é um número válido e maior que zero
+  if (!isNaN(numOfpopDrink) && numOfpopDrink > 0) {
+    // Adicione ao novo preço - assumindo que cada numOfpopDrink custa 5
+    new_price += numOfpopDrink * 10;
   }
+  if (!isNaN(numOfSeats) && numOfSeats > 0) {
+    new_price+= numOfSeats*12
+  }
+  price_el.innerHTML = new_price
+
 }
+
 
 window.onload = makeSeatsGrid;

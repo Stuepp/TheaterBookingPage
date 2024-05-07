@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,18 +26,19 @@
     <div class="booking-list">
       <div>
         <img class="seat" style="width: 30px; height: 30px;" src="./Assets/chair.png" alt="">
-        <p>Number of seats: <span id="numOfSeats"></span></p>
+        <p>Number of seats: <span id="numOfSeats">0</span></p>
       </div>
-      <div>
-        <div class="carousel">
-          <img src="./Assets/back.png" width="30px" height="30px" alt="back arrow" id="barrow" onclick="changeItem()">
-          <img src="./Assets/popcorn.png" width="40px" height="40px" alt="pop corn" id="popcorn" onclick="popCornandDrink('NumOfpopcorn')">
-          <img src="./Assets/popcorn-drink.png" width="40px" height="40px" alt="pop corn and drink" id="popcorn-drink" onclick="popCornandDrink('NumOfpopcorn-drink')">
-          <img src="./Assets/next.png" width="30px" height="30px" alt="next arrow" id="narrow" onclick="changeItem()">
-        </div>
-        <div>
-          <p>Pop corn <span id="NumOfpopcorn"></span></p>
-          <p>Pop corn and Drink <span id="NumOfpopcorn-drink"></span></p>
+        <div class="food">
+          <div class="food-item">
+            <img src="./Assets/popcorn.png" width="40px" height="40px" alt="pop corn">
+            <input type="number" value="0" min="0" onchange="updateprice()" id="numOfpop">
+          </div>
+          <p>Pop corn</p>
+          <div class="food-item">
+            <img src="./Assets/popcorn-drink.png" width="40px" height="40px" alt="pop corn and drink">
+            <input type="number" value="0" min="0" onchange="updateprice()" id="numOfpopDrink">
+          </div>
+          <p>Pop corn and Drink</p>
         </div>
       </div>
       <div class="buying">
