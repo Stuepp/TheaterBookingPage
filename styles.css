@@ -58,6 +58,7 @@ body{
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  pointer-events: none;
 }
 .screen{
   width: 100%;
@@ -82,12 +83,6 @@ body{
   justify-content: center;
   align-items: center;
   gap: 10px;
-}
-#popcorn,#popcorn-drink,#barrow,#narrow{
-  cursor: pointer;
-}
-#popcorn-drink{
-  display: none;
 }
 .buying{
   display: flex;
@@ -118,10 +113,41 @@ body{
   flex-direction: column;
   align-items: center;
 }
+.booking-item{
+  width: 40px;
+  height: 40px;
+  cursor: default;
+}
 .food-item{
   display: flex;
   gap: 10px;
 }
 .food-item input{
   width: 60px;
+}
+
+@media only screen and (min-width: 800px){
+  .seats{
+    height: 600px;
+    pointer-events: none;
+  }
+  .seat{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .screen{
+    height: 30px;
+  }
+  .booking-item{
+    width: 60px;
+    height: 60px;
+    cursor: default;
+  }
+  .buying button{
+    height: 50px;
+    width: 300px;
+    font-size: larger;
+  }
 }

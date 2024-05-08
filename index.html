@@ -13,8 +13,7 @@
   </div>
   <div class="container">
     <div class="seats" id="seats">
-      <!-- mudar de inout e label para onclick mesmo -->
-      <div class="seats-left" id="seats-left" onclick="event.stopPropagation(); zoomSeats('seats-left', '.left-seat')">
+      <div class="seats-left" id="seats-left" onclick=" zoomSeats('seats-left', '.left-seat')"> <!--event.stopPropagation();-->
         <img class="seat" id="seat" src="./Assets/chair.png" alt="" style="display: none;">
       </div>
       <div class="seats-center" id="seats-center" onclick="zoomSeats('seats-center', '.center-seat')"></div>
@@ -25,17 +24,17 @@
     </div>
     <div class="booking-list">
       <div class="booking-seat">
-        <img class="seat" style="width: 30px; height: 30px; cursor: default;" src="./Assets/chair.png" alt="">
+        <img class="seat booking-item" src="./Assets/chair.png" alt="booking seat">
         <p>Number of seats: <span id="numOfSeats">0</span></p>
       </div>
         <div class="food">
           <div class="food-item">
-            <img src="./Assets/popcorn.png" width="40px" height="40px" alt="pop corn">
+            <img src="./Assets/popcorn.png" class="booking-item" alt="pop corn">
             <input type="number" value="0" min="0" onchange="updateprice()" id="numOfpop">
           </div>
           <p>Pop corn</p>
           <div class="food-item">
-            <img src="./Assets/popcorn-drink.png" width="40px" height="40px" alt="pop corn and drink">
+            <img src="./Assets/popcorn-drink.png" class="booking-item" alt="pop corn and drink">
             <input type="number" value="0" min="0" onchange="updateprice()" id="numOfpopDrink">
           </div>
           <p>Pop corn and Drink</p>

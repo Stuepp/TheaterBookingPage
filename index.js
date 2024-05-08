@@ -12,7 +12,7 @@ function makeSeatsGrid(){
       cloneSeat.style.display = 'block'
       cloneSeat.setAttribute("id", `L-${row}-${col}`)
       cloneSeat.setAttribute("onclick", `bookSeat("L-${row}-${col}")`);
-      cloneSeat.style.pointerEvents = 'none'
+      //cloneSeat.style.pointerEvents = 'none'
       seats_left.appendChild(cloneSeat);
     }
   }
@@ -24,7 +24,7 @@ function makeSeatsGrid(){
         cloneSeat.style.display = 'block'
         cloneSeat.setAttribute("id", `C-${row}-${col}`)
         cloneSeat.setAttribute("onclick", `bookSeat("C-${row}-${col}")`);
-        cloneSeat.style.pointerEvents = 'none'
+        //cloneSeat.style.pointerEvents = 'none'
         seats_center.appendChild(cloneSeat);
       }
     }
@@ -36,7 +36,7 @@ function makeSeatsGrid(){
       cloneSeat.style.display = 'block'
       cloneSeat.setAttribute("id", `R-${row}-${col}`)
       cloneSeat.setAttribute("onclick", `bookSeat("R-${row}-${col}")`);
-      cloneSeat.style.pointerEvents = 'none'
+      //cloneSeat.style.pointerEvents = 'none'
       seats_right.appendChild(cloneSeat);
     }
   }
@@ -110,7 +110,6 @@ function updateprice(){
   let numOfpopDrink = parseInt(document.getElementById('numOfpopDrink').value)
   let numOfSeats = parseInt(document.getElementById('numOfSeats').innerHTML)
   let new_price = 0
-  alert(new_price)
   // Verifique se numOfpop é um número válido e maior que zero
   if (!isNaN(numOfpop) && numOfpop > 0) {
     new_price += numOfpop * 7; // Multiplique numOfpop por 7 e adicione ao novo preço
