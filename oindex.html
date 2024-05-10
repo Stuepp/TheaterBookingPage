@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./ostyles.css">
+  <script src="./oindex.js"></script>
+  <title>Movie Theater Name</title>
+</head>
+<body>
+  <header>
+    <h2>Movie Theater Name</h2>
+  </header>
+
+  <section>
+    <div class="movie-banner">
+      <img src="Assets/movie-banner.jpg" alt="Movie Banner Movie-Name">
+      <div class="movie-info">
+        <h1 class="movie-name movie-text">Movie Name</h1>
+        <div class="movie-specs">
+          <div class="box">movie duration</div>
+          <div class="box">movie type</div>
+          <div class="movie-age black-age">+18</div>
+        </div>
+        <h2 class="movie-data movie-text">Date</h2>
+        <p class="movie-text">Room</p>
+        <p class="movie-text">Dub/Sub</p>
+      </div>
+    </div>
+
+    <div class="room">
+      <div class="seats" id="seats">
+        <img src="Assets/chair.png" id="seat-o" class="seat" alt="seat" style="display: none;">
+      </div>
+      <div class="screen">
+        <p>SCREEN</p>
+      </div>
+    </div>
+
+    <div class="grid-items">
+      <p>Number of seats:</p><p class="grid-item" id="num_seats">0</p>
+      <p>Full price tickets:</p><input class="numOfItems" type="number" name="" value="0" min="0" max="0" oninput="newMax()" id="full_price_ticket" />
+      <p>Half price tickets:</p><input class="numOfItems" type="number" name="" value="0" min="0" max="0" oninput="newMax()" id="half_price_ticket" />
+    </div>
+    
+    <div class="grid-items">
+      <img class="grid-item" src="Assets/popcorn.png" alt=""><input class="numOfItems" type="number" name="" value="0" min="0" oninput="updateprice()" id="popcorn" />
+      <img class="grid-item" src="Assets/popcorn-drink.png" alt=""><input class="numOfItems" type="number" name="" value="0" min="0" oninput="updateprice()" id="popcorn-drink" />
+    </div>
+
+    <div class="grid-items">
+      <p class="grid-item">Total Price: </p><p class="grid-item" id="price">US$: 0</p>
+    </div>
+
+    <div class="choice-bts">
+      <button id="negative-bt">CANCEL</button>
+      <button id="positive-bt">BUY</button>
+    </div>
+  </section>
+
+</body>
+</html>

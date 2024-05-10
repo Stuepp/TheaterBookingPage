@@ -13,11 +13,9 @@
   </div>
   <div class="container">
     <div class="seats" id="seats">
-      <div class="seats-left" id="seats-left" onclick=" zoomSeats('seats-left', '.left-seat')"> <!--event.stopPropagation();-->
+      <div class="seats-center" id="seats-center" onclick="zoomSeats('seats-center', '.center-seat')">
         <img class="seat" id="seat" src="./Assets/chair.png" alt="" style="display: none;">
       </div>
-      <div class="seats-center" id="seats-center" onclick="zoomSeats('seats-center', '.center-seat')"></div>
-      <div class="seats-right" id="seats-right" onclick="zoomSeats('seats-right','.right-seat')"></div>
     </div>
     <div class="screen">
       <p>SCREEN</p>
@@ -42,8 +40,8 @@
       </div>
       <div class="buying">
         <p>Price: $<span id="price">0</span></p>
-        <button id="buy">BUY</button>
-        <button id="cancel">CANCEL</button>
+        <button class="buy-bt">BUY</button>
+        <button class="cancel-bt">CANCEL</button>
       </div>
     </div>
   </div>

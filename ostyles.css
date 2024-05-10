@@ -1,0 +1,156 @@
+*{
+  margin: none;
+  padding: none;
+}
+body{
+  background-color: white;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+}
+
+section{
+  position: relative;
+  top: 60px;
+  margin-top: 15px;
+  padding: 0px 15px 0px 15px;
+}
+
+.movie-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.movie-banner img{
+  width: 200px;
+  max-height: 300px;
+  border-radius: 5px;
+}
+.movie-text{
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+.movie-name{
+  color: black;
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.movie-specs{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.box{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: fit-content;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.movie-age{
+  color: white;
+  font-weight: 900;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.black-age{
+  background-color: black;
+}
+.movie-data{
+  color: darkred;
+}
+
+.room{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.seat-letters{
+  color: gray;
+  font-weight: 600;
+  width: fit-content;
+}
+.seats{
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  column-gap: 5px;
+}
+.seat{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.screen{
+  background-color: gray;
+  color: white;
+  font-weight: 900;
+  width: 100%;
+  grid-column: 1 / span 2;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-items{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+.grid-item{
+  justify-self: center;
+  align-self: center;
+}
+.grid-items img {
+  width: 50px;
+  height: 50px;
+}
+.numOfItems{
+  width: 30px;
+  height: 30px;
+  justify-self: start;
+  align-self: center;
+  text-align: center;
+  border: 1px solid black;
+  padding-right: 10px;
+}
+
+.choice-bts{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.choice-bts button{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#negative-bt{
+  background-color: red;
+}
+#positive-bt{
+  background-color: green;
+}

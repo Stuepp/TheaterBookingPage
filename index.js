@@ -4,18 +4,6 @@ function makeSeatsGrid(){
   let seats_right = document.getElementById('seats-right');
   let seat = document.getElementById('seat');
   
-  // left seats
-  for(let row = 0; row < 14; row++){
-    for(let col = 1; col < 2; col++){
-      const cloneSeat = seat.cloneNode(true);
-      cloneSeat.setAttribute("class", "seat left-seat");
-      cloneSeat.style.display = 'block'
-      cloneSeat.setAttribute("id", `L-${row}-${col}`)
-      cloneSeat.setAttribute("onclick", `bookSeat("L-${row}-${col}")`);
-      //cloneSeat.style.pointerEvents = 'none'
-      seats_left.appendChild(cloneSeat);
-    }
-  }
 // center seats
     for(let row = 0; row < 8; row++){
       for(let col = 0; col < 8; col++){
@@ -28,31 +16,23 @@ function makeSeatsGrid(){
         seats_center.appendChild(cloneSeat);
       }
     }
-  // right seats
-  for(let row = 0; row < 14; row++){
-    for(let col = 1; col < 2; col++){
-      const cloneSeat = seat.cloneNode(true);
-      cloneSeat.setAttribute("class", "seat right-seat");
-      cloneSeat.style.display = 'block'
-      cloneSeat.setAttribute("id", `R-${row}-${col}`)
-      cloneSeat.setAttribute("onclick", `bookSeat("R-${row}-${col}")`);
-      //cloneSeat.style.pointerEvents = 'none'
-      seats_right.appendChild(cloneSeat);
-    }
-  }
 }
 
 function zoomSeats(id, child_class){
   let seats = document.getElementById(id)
+  let style = seats.style
   let filhos = document.getElementById(id).querySelectorAll(child_class);
-  if(seats.style.transform == "scale(2)"){
-    seats.style.transform = "scale(1)"
-    seats.style.backgroundColor = "none";
-    seats.style.cursor = "zoom-in";
+  if(seats.style.transform != "scale(1)"){
+    style.marginTop = "0px"
+    style.transform = "scale(1)"
+    style.backgroundColor = "none";
+    style.cursor = "zoom-in";
+    seats.style.gap = "10px"
     filhos.forEach(function(filho, index) {
       filho.style.pointerEvents = 'none'
     });
   }else{
+    style.marginTop = "80px"
     seats.style.transform = "scale(2)";
     seats.style.backgroundColor = "white";
     seats.style.cursor = "zoom-out";
