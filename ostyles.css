@@ -154,3 +154,73 @@ section{
 #positive-bt{
   background-color: green;
 }
+
+@media only screen and (min-width: 500px){
+  header h2{
+    font-size: 60px;
+  }
+  .seat{
+    width: 50px;
+    height: 50px;
+  }
+  .grid-items img{
+    width: 80px;
+    height: 80px;
+  }
+  .movie-banner img{
+    width: 400px;
+    height: auto;
+    max-height: 800px;
+  }
+  .movie-name{
+    font-size: 60px;
+  }
+  .movie-info, .seats, .grid-items, .choice-bts button{
+    font-size: 30px;
+  }
+  .numOfItems{
+    width: 60px;
+    height: auto;
+    font-size: 30px;
+  }
+  .movie-data{
+    font-size: 50px;
+  }
+  .movie-specs{
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1800px){
+  .movie-banner{
+    flex-direction: row;
+    margin: 30px;
+  }
+  .movie-info{
+    margin-left: 30px;
+  }
+  .grid{
+    display: flex;
+    flex-basis: 0;
+  }
+  .grid-items{
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    column-gap: 30px;
+    row-gap: 10px;
+  }
+  .grid-item{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .choice-bts{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .choice-bts button{
+    width: 60%;
+  }
+}
