@@ -20,15 +20,15 @@
 
 -----
 
-## Resumo
+## Summary
   As this is a simple single page project, I went for a path to review and improve even for a bit my skills in pure HTML, CSS and JS. The biggest challenge for me was to make the code more reusable.
 
 
-## Solução
+## Solution
   For responsiveness I used @media only screen and (min-width ) along with the use of classes for items which would have similarities in the way they work, if not the same. The use of ID to be used in JS mainly and for its differentiation in CSS
 
 
-## Abordagem
+## Approach
   As I said before, I went down a path of reviewing the basics, for this I only used HTML, CSS and JS. To make this page complete and responsive, as I'm not UX Design and it seems like I'm not very good at it, I went to the mall and took photos of the totem there to... inspire me, let's say haha.
 
   After having this inspiration, I made the page from scratch, using what I already did, but improving it.
